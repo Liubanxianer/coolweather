@@ -1,10 +1,14 @@
 package com.coolweather.android.util;
 
+import android.bluetooth.le.ScanRecord;
 import android.text.TextUtils;
 
+import com.coolweather.android.R;
 import com.coolweather.android.db.City;
 import com.coolweather.android.db.County;
 import com.coolweather.android.db.Province;
+import com.coolweather.android.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +20,20 @@ import org.json.JSONObject;
  */
 
 public class Utility {
+    public static Weather handleWeatherResponse(String response) {
+
+        try {
+            JSONObject jsonObject =new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String  weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent,Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 /**
  * 解析从服务器返回的升级json数据
  */
