@@ -110,7 +110,7 @@ public class WeatherActivity extends AppCompatActivity {
         degreeText.setText(degree);
         weatherInfoText.setText(weatherInfo);
         forecastLayout.removeAllViews();
-        for (Forecast forecast: weather.forecastList){
+/*        for (Forecast forecast: weather.forecastList){
             View view = LayoutInflater.from(this).
                     inflate(R.layout.forecast_item, forecastLayout, false);
             TextView dateText = (TextView) view.findViewById(R.id.date_text);
@@ -122,8 +122,8 @@ public class WeatherActivity extends AppCompatActivity {
             maxText.setText(forecast.temperature.max);
             minText.setText(forecast.temperature.min);
             forecastLayout.addView(view);
-        }
-        if (weather.aqi != null){
+        }*/
+/*        if (weather.aqi != null){
             aqiText.setText(weather.aqi.city.aqi);
             pm25Text.setText(weather.aqi.city.pm25);
         }
@@ -133,7 +133,7 @@ public class WeatherActivity extends AppCompatActivity {
         comfortText.setText(comfort);
         carWashText.setText(carWash);
         sportText.setText(sport);
-        weatherLayout.setVisibility(View.VISIBLE);
+        weatherLayout.setVisibility(View.VISIBLE);*/
     }
 
 
